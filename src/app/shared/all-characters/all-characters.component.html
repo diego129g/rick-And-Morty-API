@@ -2,7 +2,9 @@
 <ion-content *ngIf="allCharacters">
   <ion-list>
     <ion-list-header>
+      
       Listado de personajes
+     
     </ion-list-header>
 
     <ion-item *ngFor = "let character of allCharacters.results " (click) = "openModal(character)">

@@ -5,7 +5,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class RickAndMortyService {
+  [x: string]: any;
+  
 
+ 
   httpOptions: any
   api_url = "https://rickandmortyapi.com/api"
 
@@ -27,4 +30,18 @@ export class RickAndMortyService {
       })
     })
   }
+  getAllEpisodes(){
+    return new Promise(resolve => {
+      this.http.get(this.api_url+'/episode',this.httpOptions).subscribe(res1 => {
+        console.log(res1);
+        resolve(res1);
+      }, err1=> {
+        console.log(err1)
+      })
+    })
+  }
+  
 }
+
+ 
+

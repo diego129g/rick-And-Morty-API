@@ -8,10 +8,7 @@ import { CharacterDetailComponent } from '../character-detail/character-detail.c
   styleUrls: ['./all-characters.component.scss'],
 })
 export class AllCharactersComponent implements OnInit {
-
   allCharacters: any;
-
-
   constructor(
     private randmService: RickAndMortyService,
     private modalController: ModalController
@@ -23,7 +20,6 @@ export class AllCharactersComponent implements OnInit {
       console.log (this.allCharacters);
     });
   }
-
   async openModal(data: any) {
     const modal = await this.modalController.create({
     component: CharacterDetailComponent,
